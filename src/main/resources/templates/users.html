@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Customer</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container-fluid text-center">
+  <div>
+  <h1>Manage Customer</h1>
+  </div>
+  <div class="m-2">
+    <a class="h3" th:href="@{/users/new}">Add New Customer</a>
+  </div>
+
+  <div th:if="${message}" class="alert alert-success text-center">
+    [[${message}]]
+  </div>
+
+
+  <div>
+    <table class="table table-bordered ">
+      <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>First-Name</th>
+        <th>Last-Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="user : ${listUsers}">
+        <tr>
+          <td>[[${user.id}]]</td>
+          <td>[[${user.email}]]</td>
+          <td>[[${user.first_name}]]</td>
+          <td>[[${user.last_name}]]</td>
+          <td>[[${user.street}]]</td>
+          <td>[[${user.city}]]</td>
+          <td>[[${user.state}]]</td>
+          <td>[[${user.phone}]]</td>
+          <td>
+            <a class="h5 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
+            <a class="h5" th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
+          </td>
+
+
+        </tr>
+
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
