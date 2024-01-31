@@ -6,8 +6,11 @@ Prerequisites
 Before running the project, ensure you have the following prerequisites installed on your machine:
 
 Java Development Kit (JDK)
+
 Integrated Development Environment (IDE) with Spring Boot support (e.g., IntelliJ IDEA, Eclipse)
+
 Apache Tomcat server
+
 Setup
 Clone the repository to your local machine:
 
